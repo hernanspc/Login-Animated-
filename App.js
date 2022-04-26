@@ -5,6 +5,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { Asset } from "expo-asset";
 import { AppLoading } from "expo";
 import Login from "./screens/Login";
+import LoginScreen from "./screens/LoginScreen";
 
 // function cacheImages(images) {
 //   return images.map((image) => {
@@ -28,8 +29,8 @@ export default function App() {
 
   //   await Promise.all([...imageAssets]);
   // };
-
-  return <Login />;
+  // return <Login />;
+  return <LoginScreen />;
 }
 
 const styles = StyleSheet.create({

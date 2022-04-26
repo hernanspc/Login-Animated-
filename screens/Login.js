@@ -1,8 +1,18 @@
 import React, { Component, useState } from "react";
-import { View, StyleSheet, Dimensions, Text, TextInput } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Dimensions,
+  Text,
+  TextInput,
+  KeyboardAvoidingView,
+  Platform,
+  Keyboard,
+} from "react-native";
 import Animated, { Easing } from "react-native-reanimated";
 import { TapGestureHandler, State } from "react-native-gesture-handler";
 
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { RunTiming } from "../libs/Animations";
 import Svg, { Image, Circle, ClipPath } from "react-native-svg";
 
@@ -83,7 +93,11 @@ const Login = () => {
   });
 
   return (
-    <View style={styles.container}>
+    // <View style={styles.container}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}
+    >
       <Animated.View
         style={{ ...StyleSheet.absoluteFill, transform: [{ translateY: bgY }] }}
       >
@@ -156,7 +170,8 @@ const Login = () => {
           </Animated.View>
         </Animated.View>
       </View>
-    </View>
+    </KeyboardAvoidingView>
+    //  </View>
   );
 };
 
@@ -185,6 +200,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     paddingLeft: 10,
     borderColor: "rgba(0,0,0,0.2)",
+    backgroundColor: "#fff",
   },
   closeButton: {
     height: 40,
