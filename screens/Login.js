@@ -93,7 +93,7 @@ const Login = () => {
           </ClipPath>
 
           <Image
-            href={require("../assets/bg.jpg")}
+            href={require("../assets/background/costa_verde.jpg")}
             height={height + 50}
             width={width}
             preserveAspectRatio="xMidYMid slice"
